@@ -2062,6 +2062,16 @@ body {
         width: 960px;
         margin: 0 auto;
       }
+    @font-face {
+      font-family: 'JiangPanJiuShiYue-2';
+      src: url('/media/fonts/JiangPanJiuShiYue-2.ttf');
+    }
+    * {
+        font-family: 'JiangPanJiuShiYue-2';
+    }
+    .katex-block *{
+      font-family: 'KaTeX_Main';
+    }
     body {
       color: #555;
     }
