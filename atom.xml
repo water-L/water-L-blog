@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://water-L.github.io</id>
     <title>兔子窝</title>
-    <updated>2021-08-02T09:44:05.856Z</updated>
+    <updated>2021-08-02T10:18:47.710Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://water-L.github.io"/>
     <link rel="self" href="https://water-L.github.io/atom.xml"/>
@@ -11,11 +11,44 @@
     <icon>https://water-L.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 兔子窝</rights>
     <entry>
+        <title type="html"><![CDATA[上海——日常（1）]]></title>
+        <id>https://water-L.github.io/post/shanghai1/</id>
+        <link href="https://water-L.github.io/post/shanghai1/">
+        </link>
+        <updated>2021-08-02T08:28:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>日常篇·第1集——</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>日常篇·第1集——</p>
+<!-- more -->
+<h2 id="前往上海">前往上海</h2>
+<p>我是6月30日晚上到上海的。</p>
+<p>说起来这真是一段艰辛的旅程。原定的行程是29日晚上的飞机到北京，在学校休整一晚后坐第二天中午的高铁前往上海。可天公不作美，这趟飞机因为天气原因取消并改成了当天上午的另一趟——得到消息时还是高考出分前，出于对吉安地区考试情况的乐观估计，为了在填志愿的时候有足够的人手，我们还是选择了当天晚上的一趟由井冈山飞北京的航班。然而，最终的结果是吉安地区拉胯了，这趟飞机也遭遇了同样的命运——取消，并改成了30日中午的另一趟航班。于是，这个原本时间充裕的行程变成了分秒必争的极限操作。</p>
+<blockquote>
+<p>最终的安排（30日）：</p>
+<p>11：50井冈山飞北京大兴</p>
+<p>15：51抵达学校，收拾行李</p>
+<p>19：00北京南站坐高铁</p>
+<p>23：29抵达上海</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://water-L.github.io/post-images/1627877057436.jpg" alt="" loading="lazy"></figure>
+<h2 id="集体出游">集体出游</h2>
+<p>在第二周周末，孟萃老师来上海看我们，于是我们便借这个机会组织大家一起出去玩。这次是一趟红色之旅，一来正好紧跟时事，二来也可以为我们后续支队评奖增加点素材😁。</p>
+<p>老师与我们约定中午在申报馆见面然后吃午饭，我们便给上午安排了个参观申报馆的行程。可到了申报馆所在地我们就傻眼了——那里只见一家餐馆（也就是我们中午吃饭的地方），便再不见其他入口。于是围着申报馆转了两圈之后，见时间还早，我们便一起去外滩走了走。</p>
+<p>到午饭时间，和孟老师一聊才知道原来申报馆如今已经全部为这家餐厅所占据。这里是复旦校友集资改造的，而我们的所谓参观，也就只能是参观一下这家餐厅了。中午还发生了一个意外：老师为我们每人点了一份烤鸡，想着是像牛排一样的那种鸡排，没成想端上来的却是一整只鸡……</p>
+<figure data-type="image" tabindex="2"><img src="https://water-L.github.io/post-images/1627898196562.jpg" alt="" loading="lazy"></figure>
+<p>午饭后我们一路参观了中共二大和一大的会址。二大人不算多，一大却再一次让我见识到那恐怖的“蛇形阵”。之后，聪哥三人打算到外滩去玩，而我们剩下的人疲惫不堪，都选择打道回府。</p>
+<p>第三周周六我们又得一次机会一起出游，这次是因为hgx同学的亲戚要请我们一行人吃饭。这天上午我们到上海市博物馆参观。不得不说，在我眼里，各地的博物馆其实都大同小异😜……之后下午为了躲避室外的酷暑，我们一头扎进了上海市人民公园地下的“花花世界”——真是个二次元浓度过高的地方。</p>
+<p>到晚上这一天的重头戏来了——没曾想能有机会在金茂大厦上的悦轩餐厅吃饭🤣。菜品很美味，87层的开阔视野也很壮观。</p>
+<p><img src="https://water-L.github.io/post-images/1627899406513.jpg" alt="" loading="lazy"><br>
+<img src="https://water-L.github.io/post-images/1627899410614.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[上海——实习]]></title>
         <id>https://water-L.github.io/post/shanghai2/</id>
         <link href="https://water-L.github.io/post/shanghai2/">
         </link>
-        <updated>2021-08-01T16:25:17.000Z</updated>
+        <updated>2021-07-31T16:25:17.000Z</updated>
         <summary type="html"><![CDATA[<p>实习内容相关——</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>实习内容相关——</p>
@@ -391,67 +424,6 @@ void exchange(float *matrix[7], int flag)
     return;
 
 }
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[有限元作业——Mathematica]]></title>
-        <id>https://water-L.github.io/post/Finite-Element-Method/</id>
-        <link href="https://water-L.github.io/post/Finite-Element-Method/">
-        </link>
-        <updated>2020-12-02T00:43:21.000Z</updated>
-        <summary type="html"><![CDATA[<p>题为计算长直接地金属槽内电场，为强迫边界条件。</p>
-<p>计算时采用了所谓的“划0置1”法。课程讲义中通过调整节点编号的方式来避免这种方法带来的矩阵处理上的复杂，但增加了节点划分的任务量。此处采用讲义中提到的直线内插法划分节点，而Mathematica强大的功能也使“划0置1”法的实现变得十分简单。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>题为计算长直接地金属槽内电场，为强迫边界条件。</p>
-<p>计算时采用了所谓的“划0置1”法。课程讲义中通过调整节点编号的方式来避免这种方法带来的矩阵处理上的复杂，但增加了节点划分的任务量。此处采用讲义中提到的直线内插法划分节点，而Mathematica强大的功能也使“划0置1”法的实现变得十分简单。</p>
-<!-- more -->
-<pre><code class="language-mathematica">ClearAll[&quot;Global`*&quot;]
-(*节点坐标*)
-x = Flatten[(Range[7]^0*#/10) &amp; /@ (Range[6] - 1)];
-y = Flatten[((Range[7] - 1)/10) &amp; /@ Range[6]];
-(*节点编号*)
-ie = Join[Flatten[(7 (# - 1) + Range[6]) &amp; /@ Range[5]], 
-   Flatten[(7 (# - 1) + Range[6]) &amp; /@ Range[5]]];
-je = Join[ie[[Range[30]]] + 8, ie[[Range[30] + 30]] + 7];
-me = Join[ie[[Range[30]]] + 1, ie[[Range[30] + 30]] + 8];
-(*强加边界条件*)
-d = {Join[Table[0, 12], Table[100, 5]], 
-   Join[Range[7], 7*Range[5] + 1, 7*Range[5] + 7]};
-(*所求节点编号*)
-a = Flatten[(Range[5] + 7 # + 1) &amp; /@ Range[5]];
-(*单元分析*)
-K = Table[0, {i, 1, 42}, {j, 1, 42}];
-For[t = 1, t &lt;= Length[ie], t++,
-  b[ie[[t]]] = y[[je[[t]]]] - y[[me[[t]]]];
-  b[je[[t]]] = y[[me[[t]]]] - y[[ie[[t]]]];
-  b[me[[t]]] = y[[ie[[t]]]] - y[[je[[t]]]];
-  c[ie[[t]]] = x[[me[[t]]]] - x[[je[[t]]]];
-  c[je[[t]]] = x[[ie[[t]]]] - x[[me[[t]]]];
-  c[me[[t]]] = x[[je[[t]]]] - x[[ie[[t]]]];
-  sideta[t] = 2*(b[ie[[t]]]*c[je[[t]]] - b[je[[t]]]*c[ie[[t]]]);
-  ff = {ie[[t]], je[[t]], me[[t]]};
-  For[f1 = 1, f1 &lt;= 3, f1++,
-   p = ff[[f1]];
-   For[f2 = f1, f2 &lt;= 3, f2++,
-    q = ff[[f2]];
-    K[[p, q]] = K[[p, q]] + (b[p]*b[q] + c[p]*c[q])/sideta[t];
-    K[[q, p]] = K[[p, q]];
-    ];
-   ];
-  ];
-(*求解线性方程组*)
-R = Table[0, 42];
-R[[d[[2]]]] = d[[1]];
-Do[R[[i]] = -Plus @@ (K[[i, #]] &amp; /@ d[[2]]*d[[1]]), {i, a}]
-Do[Part[K, All, i] = 0, {i, d[[2]]}];
-Do[Part[K, i, All] = 0, {i, d[[2]]}];
-Do[K[[i, i]] = 1, {i, d[[2]]}];
-A = N[LinearSolve[K, R]];
-(*结果输出*)
-A = Join[A[[Range[7] + 7 # - 7]] &amp; /@ Range[6], 
-   A[[Range[7] + 42 - 7 #]] &amp; /@ (Range[5] + 1)];
-ListPlot3D[Transpose[A], ColorFunction -&gt; &quot;Rainbow&quot;]
 </code></pre>
 ]]></content>
     </entry>
