@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | 兔子窝</title>
+<title>上海——实习 | 兔子窝</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,6 +23,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://water-L.github.io">兔子窝</a></h3>
@@ -79,56 +80,49 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="row tags-container">
+          <article class="article">
+            <h1>上海——实习</h1>
+            <p class="article-meta">
+              2021-08-02
+              
+                <a href="https://water-L.github.io/tag/4WZT3UK6l/" class="badge secondary">
+                  上海实习
+                </a>
+              
+            </p>
             
-              <a href="https://water-L.github.io/tag/4WZT3UK6l/" class="badge secondary">
-                上海实习
-              </a>
-            
-              <a href="https://water-L.github.io/tag/he8vtjjs5P/" class="badge ">
-                Mcstas
-              </a>
-            
-              <a href="https://water-L.github.io/tag/jpWSVw9YHO/" class="badge ">
-                trash
-              </a>
-            
-              <a href="https://water-L.github.io/tag/X07ufcOQri/" class="badge secondary">
-                日志
-              </a>
-            
-              <a href="https://water-L.github.io/tag/NHAX_UMMma/" class="badge ">
-                笔记
-              </a>
-            
-              <a href="https://water-L.github.io/tag/lxIPlUXuEK/" class="badge secondary">
-                introspection
-              </a>
-            
-              <a href="https://water-L.github.io/tag/Psw0E9L4zl/" class="badge success">
-                C
-              </a>
-            
-              <a href="https://water-L.github.io/tag/rd9eqvevhG/" class="badge secondary">
-                mma
-              </a>
-            
-              <a href="https://water-L.github.io/tag/D2aTUPOHrE/" class="badge secondary">
-                成都旅游
-              </a>
-            
-              <a href="https://water-L.github.io/tag/b3yrBIeCBC/" class="badge secondary">
-                音乐
-              </a>
-            
-              <a href="https://water-L.github.io/tag/XLYz56tUN_/" class="badge secondary">
-                2020春节
-              </a>
-            
-          </div>
+            <div class="post-content">
+              <p>实习内容相关——</p>
+<!-- more -->
+<p>7月1日到达光源与阎映炳老师见面后，我们一起讨论了今后实习的课题内容。阎老师列举了包括EPICS控制、数据库、示波器仿真、远程控制界面的多个课题供我选择。当时已是星期四，故与老师约定在先初步了解一下各个方向，然后到下一周周一（7月5日）再确定具体课题内容。最终我们定下来实习的课题是制作一个基于EPICS 的波形数据产生和采集系统。</p>
+<h2 id="控制系统简介">控制系统简介</h2>
+<p>对于加速器来说，控制系统是一个用来进行对包括注入、加速、束流控制、束流分配等各种类型设备的调试和运行的平台。它的存在，是为了能够更好地保证加速器的正常运行，并满足加速器物理学家和工程技术人员对设备检测于控制和数据获取、存储及分析等方面的需求。在应用的过程中，这样一个控制系统还应该具备基本的扩展支持能力，以便根据不同的需求组合各类控制系统应用，满足未来的升级需求。简单来说，加速器的控制系统就是加速器的“操作系统”。</p>
+<p>一般而言，加速器控制系统可以分为以下几个部分：设备控制，流数据采集，连锁保护，定时系统，控制网络，运行环境，数据存储，用户界面，上层软件，中央控制室。</p>
+<p>大型加速器控制系统的特点可以总结为以下三点：大型的、实时的、分布式的。对于一个大型加速器控制系统来说，它所控制的设备数量庞大，种类纷繁复杂，空间上的分布也往往十分广阔，这使得搭建一个完善可靠的控制系统成为一件非常复杂的系统工程。因此，在加速器控制系统架构的选择上，近年来，大家多倾向于采用基于成熟技术和标准商业化产品的系统集成方法，以在满足系统稳定性和可靠性的要求的同时，最大限度地控制研发周期和成本。目前世界上可选择的系统架构有很多，如EPICS、TANGO、DOOCS、TINE等等，其中使用范围较广的是EPICS和TANGO。在上海光源中，出于多种因素的考虑，控制系统主体部分采用的是EPICS架构，而本次实习的课题，也是以EPICS平台为基础来进行的。</p>
+<h2 id="epics简介">EPICS简介</h2>
+<p>EPICS，全称“Experimental Physics and Industrial Control System”，是一套完善的软件工具，为构建分布式控制系统提供了软件基础，常被用在粒子加速器、大型望远镜等大型实验设备的控制系统搭建中。它按照开放式系统互连的标准设计，具有模块化、可裁剪、易扩展，便于管理维护与升级等特点。在功能上，它不仅为IOC的编写提供了丰富的工具，还提供了一种特殊的网络协议，即Channel Access和pvAccess，为用户端与服务器端提供了一种高带宽的实时通讯手段。</p>
+<figure data-type="image" tabindex="1"><img src="https://water-L.github.io/post-images/1627877026365.jpg" alt="" loading="lazy"></figure>
+
+            </div>
+          </article>
         </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://water-L.github.io/post/mcstas1/">
+                <h3 class="post-title">
+                  在mcstas中实现容器
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://water-L.github.io/images/avatar.png?v=1627880305128" class="no-responsive avatar">
@@ -245,11 +239,11 @@
           上海实习
         </a>
       
-        <a href="https://water-L.github.io/tag/he8vtjjs5P/" class="badge ">
+        <a href="https://water-L.github.io/tag/he8vtjjs5P/" class="badge secondary">
           Mcstas
         </a>
       
-        <a href="https://water-L.github.io/tag/jpWSVw9YHO/" class="badge success">
+        <a href="https://water-L.github.io/tag/jpWSVw9YHO/" class="badge ">
           trash
         </a>
       
@@ -261,7 +255,7 @@
           笔记
         </a>
       
-        <a href="https://water-L.github.io/tag/lxIPlUXuEK/" class="badge success">
+        <a href="https://water-L.github.io/tag/lxIPlUXuEK/" class="badge secondary">
           introspection
         </a>
       
@@ -273,15 +267,15 @@
           mma
         </a>
       
-        <a href="https://water-L.github.io/tag/D2aTUPOHrE/" class="badge ">
+        <a href="https://water-L.github.io/tag/D2aTUPOHrE/" class="badge secondary">
           成都旅游
         </a>
       
-        <a href="https://water-L.github.io/tag/b3yrBIeCBC/" class="badge secondary">
+        <a href="https://water-L.github.io/tag/b3yrBIeCBC/" class="badge success">
           音乐
         </a>
       
-        <a href="https://water-L.github.io/tag/XLYz56tUN_/" class="badge secondary">
+        <a href="https://water-L.github.io/tag/XLYz56tUN_/" class="badge ">
           2020春节
         </a>
       
@@ -291,7 +285,8 @@
     Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://water-L.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
-  
+
+
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

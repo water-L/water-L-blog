@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | 兔子窝</title>
+<title>有限元作业——C语言 | 兔子窝</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,6 +23,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://water-L.github.io">兔子窝</a></h3>
@@ -79,56 +80,177 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="row tags-container">
+          <article class="article">
+            <h1>有限元作业——C语言</h1>
+            <p class="article-meta">
+              2020-12-07
+              
+                <a href="https://water-L.github.io/tag/Psw0E9L4zl/" class="badge warning">
+                  C
+                </a>
+              
+            </p>
             
-              <a href="https://water-L.github.io/tag/4WZT3UK6l/" class="badge secondary">
-                上海实习
-              </a>
-            
-              <a href="https://water-L.github.io/tag/he8vtjjs5P/" class="badge ">
-                Mcstas
-              </a>
-            
-              <a href="https://water-L.github.io/tag/jpWSVw9YHO/" class="badge ">
-                trash
-              </a>
-            
-              <a href="https://water-L.github.io/tag/X07ufcOQri/" class="badge secondary">
-                日志
-              </a>
-            
-              <a href="https://water-L.github.io/tag/NHAX_UMMma/" class="badge ">
-                笔记
-              </a>
-            
-              <a href="https://water-L.github.io/tag/lxIPlUXuEK/" class="badge secondary">
-                introspection
-              </a>
-            
-              <a href="https://water-L.github.io/tag/Psw0E9L4zl/" class="badge success">
-                C
-              </a>
-            
-              <a href="https://water-L.github.io/tag/rd9eqvevhG/" class="badge secondary">
-                mma
-              </a>
-            
-              <a href="https://water-L.github.io/tag/D2aTUPOHrE/" class="badge secondary">
-                成都旅游
-              </a>
-            
-              <a href="https://water-L.github.io/tag/b3yrBIeCBC/" class="badge secondary">
-                音乐
-              </a>
-            
-              <a href="https://water-L.github.io/tag/XLYz56tUN_/" class="badge secondary">
-                2020春节
-              </a>
-            
-          </div>
+            <div class="post-content">
+              <p>好久没用C语言写东西了，上次还是年初的时候写了个生日祝福的小程序……</p>
+<p>对比mma和C，果然还是站在别人的基础上方便（ノへ￣、）</p>
+<!-- more -->
+<p>言归正传，这是一个很简单的FEM的题目，唯一难的地方是要用C语言写。</p>
+<p>代码如下：</p>
+<pre><code class="language-c">#include &lt;math.h&gt;
+
+#include &lt;stdio.h&gt;
+
+#include &lt;stdlib.h&gt;
+
+/*求解线性方程组*/
+void LS(float K[12][12], float d[6]);
+void gauss_elimination(float *[7]);
+void exchange(float *[7], int flag);
+
+int main()
+{
+    /*网格坐标及节点编号*/
+    float x[12] = {3.0, 6.0, 3.0, 6.0, 3.0, 6.0, 0.0, 0.0, 0.0, 9.0, 9.0, 9.0};
+    float y[12] = {0.0, 0.0, 3.0, 3.0, 6.0, 6.0, 0.0, 3.0, 6.0, 0.0, 3.0, 6.0};
+    int ie[12] = {7, 7, 3, 3, 3, 3, 1, 1, 10, 10, 4, 4};
+    int je[12] = {1, 3, 9, 5, 6, 4, 4, 2, 4, 11, 11, 12};
+    int me[12] = {3, 8, 8, 9, 5, 6, 3, 4, 2, 4, 12, 6};
+    /*边界条件*/
+    float d[6] = {0.0, 0.0, 0.0, 100.0, 100.0, 100.0};
+    float k[12][12] = {0};
+    float b[12] = {0};
+    float c[12] = {0};
+    float sideta = 18;
+    float ff[3] = {0};
+    int t, f1, f2;
+    int p, q;
+
+    /*单元分析*/
+    for (t = 0; t &lt; 12; t++){
+        b[ie[t] - 1] = y[je[t] - 1] - y[me[t] - 1];
+        b[je[t] - 1] = y[me[t] - 1] - y[ie[t] - 1];
+        b[me[t] - 1] = y[ie[t] - 1] - y[je[t] - 1];
+        c[ie[t] - 1] = x[me[t] - 1] - x[je[t] - 1];
+        c[je[t] - 1] = x[ie[t] - 1] - x[me[t] - 1];
+        c[me[t] - 1] = x[je[t] - 1] - x[ie[t] - 1];
+    
+        ff[0] = ie[t] - 1;
+        ff[1] = je[t] - 1;
+        ff[2] = me[t] - 1;
+    
+        for (f1 = 0; f1 &lt; 3; f1++){
+            p = ff[f1];
+            for (f2 = f1; f2 &lt; 3; f2++){
+                q = ff[f2];
+                k[p][q] = k[p][q] + (b[p] * b[q] + c[p] * c[q]) / sideta;
+                k[q][p] = k[p][q];
+            }
+        }
+    }
+    
+    LS(k, d);
+    
+    system(&quot;pause&quot;);
+    return 0;
+
+}
+
+void LS(float K[12][12], float d[6])
+{
+    int i, j;
+    float temp;
+    float R[6] = {0}, A[6] = {0};
+    float *matrix[7];
+
+    for (i = 0; i &lt; 6; i++){
+        matrix[i]= K[i];
+    }
+    
+    for (i = 0; i &lt; 6; i++){
+        for (j = 6; j &lt; 12; j++){
+            R[i] += -K[i][j] * d[j - 6];
+        }
+    }
+    matrix[6] = &amp;R[0];
+    /*高斯消元法*/
+    gauss_elimination(matrix);
+    
+    A[5] = R[5] / (*(matrix[5] + 5));
+    for (i = 1; i &lt; 6; i++){
+        temp = 0;
+        for(j = 0; j &lt; i; j++){
+            temp += *(matrix[5 - j] + 5 - i) * A[5 - j];
+        }
+        A[5-i] = (R[5-i]-temp) / *(matrix[5-i]+5-i);
+    }
+    
+    for (i = 0; i &lt; 6; i++){
+        printf(&quot;%-8.3f&quot;, A[i]);
+    }
+    putchar('\n');
+    
+    return;
+
+}
+
+void gauss_elimination(float *matrix[7])
+{
+    int i, j, k;
+    float coe;
+
+    for(i=0;i&lt;6;i++){
+        exchange(matrix, i);
+        for(j=i+1;j&lt;6;j++){
+            coe = *(matrix[i]+j) / *(matrix[i]+i);
+            for(k=i;k&lt;7;k++){
+                *(matrix[k]+j) -= coe * *(matrix[k]+i);
+            }           
+        }
+    }
+    
+    return;
+
+}
+
+void exchange(float *matrix[7], int flag)
+{
+    int i;
+    float*temp;
+
+    for(i=flag+1;i&lt;6;i++){
+        if(fabs(*(matrix[flag]+flag))&lt;fabs(*(matrix[flag]+i))){
+            temp = matrix[flag];
+            matrix[flag] = matrix[i];
+            matrix[i] = temp;
+        }
+    }
+    
+    return;
+
+}
+</code></pre>
+
+            </div>
+          </article>
         </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://water-L.github.io/post/Finite-Element-Method/">
+                <h3 class="post-title">
+                  有限元作业——Mathematica
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://water-L.github.io/images/avatar.png?v=1627880305128" class="no-responsive avatar">
@@ -245,27 +367,27 @@
           上海实习
         </a>
       
-        <a href="https://water-L.github.io/tag/he8vtjjs5P/" class="badge ">
+        <a href="https://water-L.github.io/tag/he8vtjjs5P/" class="badge success">
           Mcstas
         </a>
       
-        <a href="https://water-L.github.io/tag/jpWSVw9YHO/" class="badge success">
+        <a href="https://water-L.github.io/tag/jpWSVw9YHO/" class="badge warning">
           trash
         </a>
       
-        <a href="https://water-L.github.io/tag/X07ufcOQri/" class="badge ">
+        <a href="https://water-L.github.io/tag/X07ufcOQri/" class="badge secondary">
           日志
         </a>
       
-        <a href="https://water-L.github.io/tag/NHAX_UMMma/" class="badge secondary">
+        <a href="https://water-L.github.io/tag/NHAX_UMMma/" class="badge ">
           笔记
         </a>
       
-        <a href="https://water-L.github.io/tag/lxIPlUXuEK/" class="badge success">
+        <a href="https://water-L.github.io/tag/lxIPlUXuEK/" class="badge secondary">
           introspection
         </a>
       
-        <a href="https://water-L.github.io/tag/Psw0E9L4zl/" class="badge ">
+        <a href="https://water-L.github.io/tag/Psw0E9L4zl/" class="badge warning">
           C
         </a>
       
@@ -277,11 +399,11 @@
           成都旅游
         </a>
       
-        <a href="https://water-L.github.io/tag/b3yrBIeCBC/" class="badge secondary">
+        <a href="https://water-L.github.io/tag/b3yrBIeCBC/" class="badge success">
           音乐
         </a>
       
-        <a href="https://water-L.github.io/tag/XLYz56tUN_/" class="badge secondary">
+        <a href="https://water-L.github.io/tag/XLYz56tUN_/" class="badge success">
           2020春节
         </a>
       
@@ -291,7 +413,8 @@
     Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://water-L.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
-  
+
+
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

@@ -1,179 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://water-L.github.io</id>
-    <title>兔子窝</title>
-    <updated>2021-08-02T04:58:44.681Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://water-L.github.io"/>
-    <link rel="self" href="https://water-L.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
-    <logo>https://water-L.github.io/images/avatar.png</logo>
-    <icon>https://water-L.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, 兔子窝</rights>
-    <entry>
-        <title type="html"><![CDATA[上海——实习]]></title>
-        <id>https://water-L.github.io/post/shanghai2/</id>
-        <link href="https://water-L.github.io/post/shanghai2/">
-        </link>
-        <updated>2021-08-01T16:25:17.000Z</updated>
-        <summary type="html"><![CDATA[<p>实习内容相关——</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>实习内容相关——</p>
-<!-- more -->
-<p>7月1日到达光源与阎映炳老师见面后，我们一起讨论了今后实习的课题内容。阎老师列举了包括EPICS控制、数据库、示波器仿真、远程控制界面的多个课题供我选择。当时已是星期四，故与老师约定在先初步了解一下各个方向，然后到下一周周一（7月5日）再确定具体课题内容。最终我们定下来实习的课题是制作一个基于EPICS 的波形数据产生和采集系统。</p>
-<h2 id="控制系统简介">控制系统简介</h2>
-<p>对于加速器来说，控制系统是一个用来进行对包括注入、加速、束流控制、束流分配等各种类型设备的调试和运行的平台。它的存在，是为了能够更好地保证加速器的正常运行，并满足加速器物理学家和工程技术人员对设备检测于控制和数据获取、存储及分析等方面的需求。在应用的过程中，这样一个控制系统还应该具备基本的扩展支持能力，以便根据不同的需求组合各类控制系统应用，满足未来的升级需求。简单来说，加速器的控制系统就是加速器的“操作系统”。</p>
-<p>一般而言，加速器控制系统可以分为以下几个部分：设备控制，流数据采集，连锁保护，定时系统，控制网络，运行环境，数据存储，用户界面，上层软件，中央控制室。</p>
-<p>大型加速器控制系统的特点可以总结为以下三点：大型的、实时的、分布式的。对于一个大型加速器控制系统来说，它所控制的设备数量庞大，种类纷繁复杂，空间上的分布也往往十分广阔，这使得搭建一个完善可靠的控制系统成为一件非常复杂的系统工程。因此，在加速器控制系统架构的选择上，近年来，大家多倾向于采用基于成熟技术和标准商业化产品的系统集成方法，以在满足系统稳定性和可靠性的要求的同时，最大限度地控制研发周期和成本。目前世界上可选择的系统架构有很多，如EPICS、TANGO、DOOCS、TINE等等，其中使用范围较广的是EPICS和TANGO。在上海光源中，出于多种因素的考虑，控制系统主体部分采用的是EPICS架构，而本次实习的课题，也是以EPICS平台为基础来进行的。</p>
-<h2 id="epics简介">EPICS简介</h2>
-<p>EPICS，全称“Experimental Physics and Industrial Control System”，是一套完善的软件工具，为构建分布式控制系统提供了软件基础，常被用在粒子加速器、大型望远镜等大型实验设备的控制系统搭建中。它按照开放式系统互连的标准设计，具有模块化、可裁剪、易扩展，便于管理维护与升级等特点。在功能上，它不仅为IOC的编写提供了丰富的工具，还提供了一种特殊的网络协议，即Channel Access和pvAccess，为用户端与服务器端提供了一种高带宽的实时通讯手段。</p>
-<figure data-type="image" tabindex="1"><img src="https://water-L.github.io/post-images/1627877026365.jpg" alt="" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[在mcstas中实现容器]]></title>
-        <id>https://water-L.github.io/post/mcstas1/</id>
-        <link href="https://water-L.github.io/post/mcstas1/">
-        </link>
-        <updated>2021-05-04T11:25:16.000Z</updated>
-        <summary type="html"><![CDATA[<p>其实是一件很简单的事情，但自己摸索的时候还是花了一些时间</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>其实是一件很简单的事情，但自己摸索的时候还是花了一些时间</p>
-<!--more-->
-<p>在mcstas的官方文档“<a href="http://www.mcstas.org/documentation/manual/mcstas-3.0-components.pdf">mcstas-3.0-components</a>”中，提供了这样一种方法：</p>
-<pre><code class="language-c">Sample PowderN:
-COMPONENT Cryo = PowderN ( reflection=&quot;Al.laz&quot;,radius=0.01,thickness=0.001,concentric=1)
-AT (0,0,0) RELATIVE Somewhere
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
 
-COMPONENT Sample = someother component(with geometry FULLY enclosed in the hollow)
-AT (0,0,0) RELATIVE Somewhere
+<title>密度梯度注入 | 兔子窝</title>
+<meta name="description" content="温故而知新">
 
-COMPONENT Cryo2 = COPY(Cryo) (concentric=0)
-AT (0,0,0) RELATIVE Somewhere
-</code></pre>
-<p>但是这种方法容易出现问题，如Union组件的作者Mads Bertelsen展示的，在面对如下图的情况时，mcstas会报错。在我的使用过程中，由于t&lt;0的问题mcstas舍弃了很多结果，而从所用sample的源码里可以看到，这部分中子的模拟其实并没有进行。<br>
-<img src="https://water-L.github.io/post-images/1627877119230.jpg" alt="" loading="lazy"></p>
-<p>那么这里就要用到上面所说的Union组件，其具体介绍可以参考Github上的<a href="https://github.com/McStasMcXtrace/Schools/tree/master/CSNS_March_2019/3_Wednesday_March_27th/4_union">这些内容</a>，同时在Mcstas的instrument examples里也可以看到Union的demo。具体来说，就是利用Union提供的优先级参数来实现容器和样品的构建，操作可以参考demo里的代码。</p>
-<p>demo里用到了Union_init和Union_stop，这在我的mcstas（ubuntu,2.7版本）里是没有的（也就是通不过编译）。我的解决方法是直接删掉这两段语句，目前还没有看到这种操作有什么不良后果。</p>
-<p>这段时间用Mcstas的最大感受是缺少中文的参考材料和教程。当然，对于科研人员来说读英文材料是一种必备能力，但从时间成本上来说，这些外文编写且不够详细的参考材料使用起来还是有一些麻烦。或许，找个时间可以自己翻译一下？(￣y▽,￣)╭</p>
-<p>人的想法真是不断循环往复，这大概就是为什么放下和坚持这两件事是困难的吧？</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[招生]]></title>
-        <id>https://water-L.github.io/post/post/</id>
-        <link href="https://water-L.github.io/post/post/">
-        </link>
-        <updated>2021-04-21T13:55:37.000Z</updated>
-        <summary type="html"><![CDATA[<p>又到一年招生季</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>又到一年招生季</p>
-<!-- more -->
-<p>谨以下图代表我此刻心情</p>
-<figure data-type="image" tabindex="1"><img src="https://water-L.github.io/post-images/1627876299961.jpg" alt="" loading="lazy"></figure>
-<p>三年了，似乎还是没有接受这一点，就是理想和现实还是有差距的呀……突然有点羡慕两位置身事外的同志</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[老男孩]]></title>
-        <id>https://water-L.github.io/post/nothing/</id>
-        <link href="https://water-L.github.io/post/nothing/">
-        </link>
-        <updated>2021-03-28T14:27:15.000Z</updated>
-        <summary type="html"><![CDATA[<p>一首好听的歌</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>一首好听的歌</p>
-<!-- more -->
-<iframe align="right" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=362998&auto=1&height=66"></iframe>
-那是我日夜思念深深爱着的人啊
-到底我该如何表达
-她会接受我吗
-也许永远都不会跟她说出那句话
-注定我要浪迹天涯
-怎么能有牵挂
-梦想总是遥不可及
-是不是应该放弃
-花开花落又是一季
-春天啊你在哪里
-<p>青春如同奔流的江河<br>
-一去不回来不及道别<br>
-只剩下麻木的我没有了当年的热血<br>
-看那漫天飘零的花朵<br>
-在最美丽的时刻凋谢<br>
-有谁会记得这世界他来过</p>
-<p>转眼过去多年时间多少离合悲欢<br>
-曾经志在四方少年羡慕南飞的雁</p>
-<p>各自奔前程的身影匆匆渐行渐远<br>
-未来在哪里平凡啊谁给我答案<br>
-那时陪伴我的人啊你们如今在何方<br>
-我曾经爱过的人啊现在是什么模样</p>
-<p>当初的愿望实现了吗<br>
-事到如今只好祭奠吗<br>
-任岁月风干理想再也找不回真的我<br>
-抬头仰望着满天星河<br>
-那时候陪伴我的那颗<br>
-这里的故事你是否还记得</p>
-<p>生活像一把无情刻刀<br>
-改变了我们模样<br>
-未曾绽放就要枯萎吗<br>
-我有过梦想</p>
-<p>青春如同奔流的江河<br>
-一去不回来不及道别<br>
-只剩下麻木的我没有了当年的热血<br>
-看那满天飘零的花朵<br>
-在最美丽的时刻凋谢<br>
-有谁会记得这世界他曾经来过<br>
-当初的愿望实现了吗<br>
-事到如今只好祭奠吗<br>
-任岁月风干理想再也找不回真的我<br>
-抬头仰望着满天星河<br>
-那时候陪伴我的那颗<br>
-这里的故事你是否还记得</p>
-<p>如果有明天祝福你亲爱的</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[New Term]]></title>
-        <id>https://water-L.github.io/post/new-term/</id>
-        <link href="https://water-L.github.io/post/new-term/">
-        </link>
-        <updated>2021-03-24T14:07:36.000Z</updated>
-        <summary type="html"><![CDATA[<p>这学期晚上独自一人区紫操散步的频率越来越高了(ノへ￣、)</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>这学期晚上独自一人区紫操散步的频率越来越高了(ノへ￣、)</p>
-<!--more-->
-<p>虽然上学期开始就经常和室友一起活动，和ddd之间的交流也多了许多，但总有些事情是回不来的呀……</p>
-<pre><code>东风夜放花千树，更吹落，星如雨。宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。
-蛾儿雪柳黄金缕，笑语盈盈暗香去。众里寻他千百度，蓦然回首，那人却在，灯火阑珊处。
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://water-L.github.io/post-images/1627877184075.jpg" alt="" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Birthday Gift]]></title>
-        <id>https://water-L.github.io/post/birthday-gift/</id>
-        <link href="https://water-L.github.io/post/birthday-gift/">
-        </link>
-        <updated>2021-02-22T14:19:59.000Z</updated>
-        <summary type="html"><![CDATA[<p>第一次收到这种礼物</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>第一次收到这种礼物</p>
-<!-- more -->
-<p>一瓶香水。这是我怎么也没有想到的，一时间竟有些不知所措。</p>
-<p>那么问题来了，该怎么用呢？</p>
-<p><img src="https://water-L.github.io/post-images/1627877206406.jpg" alt="" loading="lazy"><br>
-<img src="https://water-L.github.io/post-images/1627877217972.jpg" alt="" loading="lazy"></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[密度梯度注入]]></title>
-        <id>https://water-L.github.io/post/electron-injection/</id>
-        <link href="https://water-L.github.io/post/electron-injection/">
-        </link>
-        <updated>2021-02-09T00:37:10.000Z</updated>
-        <summary type="html"><![CDATA[<p>这篇文章基于上学期期末一晚上准备的课程小组pre（109B拖ddl大队(●'◡'●)），时间仓促，所以内容不多，只是刚刚好满足老师的要求。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>这篇文章基于上学期期末一晚上准备的课程小组pre（109B拖ddl大队(●'◡'●)），时间仓促，所以内容不多，只是刚刚好满足老师的要求。</p>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://water-L.github.io/favicon.ico?v=1627880305128">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://water-L.github.io/styles/main.css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://water-L.github.io">兔子窝</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>密度梯度注入</h1>
+            <p class="article-meta">
+              2021-02-09
+              
+                <a href="https://water-L.github.io/tag/NHAX_UMMma/" class="badge secondary">
+                  笔记
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <p>这篇文章基于上学期期末一晚上准备的课程小组pre（109B拖ddl大队(●'◡'●)），时间仓促，所以内容不多，只是刚刚好满足老师的要求。</p>
 <!-- more -->
 <h2 id="一-简介">一 简介</h2>
 <p>激光尾场加速是一种具有较高加速梯度的用于带电粒子加速的方法，其加速梯度往往可以达到100GV/m的量级 ，在加速器领域有着广阔的应用前景。在激光尾场加速电子的过程中，电子注入是获得高品质电子束的关键之一。</p>
@@ -224,235 +143,205 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
 S. Bulanov, N. Naumova, F. Pegoraro, J. Sakai Particle injection into the wave acceleration phase due to nonlinear wake wave breaking. Phys. Rev. E 58, R5257(R), 1998<br>
 王晓方, 王通 激光尾场加速电子的密度梯度注入的解析处理[J]. Wuli xuebao, 2016(4)</p>
 </blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[日记]]></title>
-        <id>https://water-L.github.io/post/diary1/</id>
-        <link href="https://water-L.github.io/post/diary1/">
-        </link>
-        <updated>2021-01-14T13:24:01.000Z</updated>
-        <summary type="html"><![CDATA[<p>寒训三天之后，今天是第一个休息日。前两天倒也做了一些安排，但今早一起来却啥也不想做了。</p>
-<p>于是乎，这又是虚度的一天……</p>
-<p>刚刚看了一场RNG的比赛，只觉得血压有点高，于是关了直播一个人坐着静静。突然间，我感觉自己悟到了些什么。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>寒训三天之后，今天是第一个休息日。前两天倒也做了一些安排，但今早一起来却啥也不想做了。</p>
-<p>于是乎，这又是虚度的一天……</p>
-<p>刚刚看了一场RNG的比赛，只觉得血压有点高，于是关了直播一个人坐着静静。突然间，我感觉自己悟到了些什么。</p>
-<!-- more -->
-<p>说实话，开学时感觉一切都挺美好，但现在再看这个学期过得就两个字，难受——而且越往后越难受。学习上的事情倒没什么好说的，但人际关系上的一些问题着实让我觉得自己是个憨批</p>
-<p>其实前两天学长的话让我看到了很多未曾设想过的事情，我愈发得觉得，虽然自己是一个年满二十，马上二十一的人了，但很多时候过得还是和个未成年的小朋友一样没心没肺……</p>
-<p>正经人谁TM写日记呀……</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[有限元作业——C语言]]></title>
-        <id>https://water-L.github.io/post/fem-c/</id>
-        <link href="https://water-L.github.io/post/fem-c/">
-        </link>
-        <updated>2020-12-07T08:43:32.000Z</updated>
-        <summary type="html"><![CDATA[<p>好久没用C语言写东西了，上次还是年初的时候写了个生日祝福的小程序……</p>
-<p>对比mma和C，果然还是站在别人的基础上方便（ノへ￣、）</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>好久没用C语言写东西了，上次还是年初的时候写了个生日祝福的小程序……</p>
-<p>对比mma和C，果然还是站在别人的基础上方便（ノへ￣、）</p>
-<!-- more -->
-<p>言归正传，这是一个很简单的FEM的题目，唯一难的地方是要用C语言写。</p>
-<p>代码如下：</p>
-<pre><code class="language-c">#include &lt;math.h&gt;
 
-#include &lt;stdio.h&gt;
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://water-L.github.io/post/diary1/">
+                <h3 class="post-title">
+                  日记
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
 
-#include &lt;stdlib.h&gt;
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://water-L.github.io/images/avatar.png?v=1627880305128" class="no-responsive avatar">
+    <div class="text-muted">温故而知新</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://water-L.github.io/post/shanghai2/">上海——实习</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://water-L.github.io/post/mcstas1/">在mcstas中实现容器</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://water-L.github.io/post/post/">招生</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://water-L.github.io/post/nothing/">老男孩</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://water-L.github.io/post/new-term/">New Term</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://water-L.github.io/post/birthday-gift/">Birthday Gift</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://water-L.github.io/post/electron-injection/">密度梯度注入</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://water-L.github.io/post/diary1/">日记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://water-L.github.io/post/fem-c/">有限元作业——C语言</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://water-L.github.io/post/Finite-Element-Method/">有限元作业——Mathematica</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://water-L.github.io/tag/4WZT3UK6l/" class="badge secondary">
+          上海实习
+        </a>
+      
+        <a href="https://water-L.github.io/tag/he8vtjjs5P/" class="badge ">
+          Mcstas
+        </a>
+      
+        <a href="https://water-L.github.io/tag/jpWSVw9YHO/" class="badge secondary">
+          trash
+        </a>
+      
+        <a href="https://water-L.github.io/tag/X07ufcOQri/" class="badge secondary">
+          日志
+        </a>
+      
+        <a href="https://water-L.github.io/tag/NHAX_UMMma/" class="badge ">
+          笔记
+        </a>
+      
+        <a href="https://water-L.github.io/tag/lxIPlUXuEK/" class="badge ">
+          introspection
+        </a>
+      
+        <a href="https://water-L.github.io/tag/Psw0E9L4zl/" class="badge secondary">
+          C
+        </a>
+      
+        <a href="https://water-L.github.io/tag/rd9eqvevhG/" class="badge secondary">
+          mma
+        </a>
+      
+        <a href="https://water-L.github.io/tag/D2aTUPOHrE/" class="badge secondary">
+          成都旅游
+        </a>
+      
+        <a href="https://water-L.github.io/tag/b3yrBIeCBC/" class="badge success">
+          音乐
+        </a>
+      
+        <a href="https://water-L.github.io/tag/XLYz56tUN_/" class="badge success">
+          2020春节
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://water-L.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
 
-/*求解线性方程组*/
-void LS(float K[12][12], float d[6]);
-void gauss_elimination(float *[7]);
-void exchange(float *[7], int flag);
 
-int main()
-{
-    /*网格坐标及节点编号*/
-    float x[12] = {3.0, 6.0, 3.0, 6.0, 3.0, 6.0, 0.0, 0.0, 0.0, 9.0, 9.0, 9.0};
-    float y[12] = {0.0, 0.0, 3.0, 3.0, 6.0, 6.0, 0.0, 3.0, 6.0, 0.0, 3.0, 6.0};
-    int ie[12] = {7, 7, 3, 3, 3, 3, 1, 1, 10, 10, 4, 4};
-    int je[12] = {1, 3, 9, 5, 6, 4, 4, 2, 4, 11, 11, 12};
-    int me[12] = {3, 8, 8, 9, 5, 6, 3, 4, 2, 4, 12, 6};
-    /*边界条件*/
-    float d[6] = {0.0, 0.0, 0.0, 100.0, 100.0, 100.0};
-    float k[12][12] = {0};
-    float b[12] = {0};
-    float c[12] = {0};
-    float sideta = 18;
-    float ff[3] = {0};
-    int t, f1, f2;
-    int p, q;
+    </div>
 
-    /*单元分析*/
-    for (t = 0; t &lt; 12; t++){
-        b[ie[t] - 1] = y[je[t] - 1] - y[me[t] - 1];
-        b[je[t] - 1] = y[me[t] - 1] - y[ie[t] - 1];
-        b[me[t] - 1] = y[ie[t] - 1] - y[je[t] - 1];
-        c[ie[t] - 1] = x[me[t] - 1] - x[je[t] - 1];
-        c[je[t] - 1] = x[ie[t] - 1] - x[me[t] - 1];
-        c[me[t] - 1] = x[je[t] - 1] - x[ie[t] - 1];
-    
-        ff[0] = ie[t] - 1;
-        ff[1] = je[t] - 1;
-        ff[2] = me[t] - 1;
-    
-        for (f1 = 0; f1 &lt; 3; f1++){
-            p = ff[f1];
-            for (f2 = f1; f2 &lt; 3; f2++){
-                q = ff[f2];
-                k[p][q] = k[p][q] + (b[p] * b[q] + c[p] * c[q]) / sideta;
-                k[q][p] = k[p][q];
-            }
-        }
-    }
-    
-    LS(k, d);
-    
-    system(&quot;pause&quot;);
-    return 0;
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-}
+<script type="application/javascript">
 
-void LS(float K[12][12], float d[6])
-{
-    int i, j;
-    float temp;
-    float R[6] = {0}, A[6] = {0};
-    float *matrix[7];
+AOS.init();
 
-    for (i = 0; i &lt; 6; i++){
-        matrix[i]= K[i];
-    }
-    
-    for (i = 0; i &lt; 6; i++){
-        for (j = 6; j &lt; 12; j++){
-            R[i] += -K[i][j] * d[j - 6];
-        }
-    }
-    matrix[6] = &amp;R[0];
-    /*高斯消元法*/
-    gauss_elimination(matrix);
-    
-    A[5] = R[5] / (*(matrix[5] + 5));
-    for (i = 1; i &lt; 6; i++){
-        temp = 0;
-        for(j = 0; j &lt; i; j++){
-            temp += *(matrix[5 - j] + 5 - i) * A[5 - j];
-        }
-        A[5-i] = (R[5-i]-temp) / *(matrix[5-i]+5-i);
-    }
-    
-    for (i = 0; i &lt; 6; i++){
-        printf(&quot;%-8.3f&quot;, A[i]);
-    }
-    putchar('\n');
-    
-    return;
+hljs.initHighlightingOnLoad()
 
-}
+</script>
 
-void gauss_elimination(float *matrix[7])
-{
-    int i, j, k;
-    float coe;
 
-    for(i=0;i&lt;6;i++){
-        exchange(matrix, i);
-        for(j=i+1;j&lt;6;j++){
-            coe = *(matrix[i]+j) / *(matrix[i]+i);
-            for(k=i;k&lt;7;k++){
-                *(matrix[k]+j) -= coe * *(matrix[k]+i);
-            }           
-        }
-    }
-    
-    return;
 
-}
 
-void exchange(float *matrix[7], int flag)
-{
-    int i;
-    float*temp;
-
-    for(i=flag+1;i&lt;6;i++){
-        if(fabs(*(matrix[flag]+flag))&lt;fabs(*(matrix[flag]+i))){
-            temp = matrix[flag];
-            matrix[flag] = matrix[i];
-            matrix[i] = temp;
-        }
-    }
-    
-    return;
-
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[有限元作业——Mathematica]]></title>
-        <id>https://water-L.github.io/post/Finite-Element-Method/</id>
-        <link href="https://water-L.github.io/post/Finite-Element-Method/">
-        </link>
-        <updated>2020-12-02T00:43:21.000Z</updated>
-        <summary type="html"><![CDATA[<p>题为计算长直接地金属槽内电场，为强迫边界条件。</p>
-<p>计算时采用了所谓的“划0置1”法。课程讲义中通过调整节点编号的方式来避免这种方法带来的矩阵处理上的复杂，但增加了节点划分的任务量。此处采用讲义中提到的直线内插法划分节点，而Mathematica强大的功能也使“划0置1”法的实现变得十分简单。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>题为计算长直接地金属槽内电场，为强迫边界条件。</p>
-<p>计算时采用了所谓的“划0置1”法。课程讲义中通过调整节点编号的方式来避免这种方法带来的矩阵处理上的复杂，但增加了节点划分的任务量。此处采用讲义中提到的直线内插法划分节点，而Mathematica强大的功能也使“划0置1”法的实现变得十分简单。</p>
-<!-- more -->
-<pre><code class="language-mathematica">ClearAll[&quot;Global`*&quot;]
-(*节点坐标*)
-x = Flatten[(Range[7]^0*#/10) &amp; /@ (Range[6] - 1)];
-y = Flatten[((Range[7] - 1)/10) &amp; /@ Range[6]];
-(*节点编号*)
-ie = Join[Flatten[(7 (# - 1) + Range[6]) &amp; /@ Range[5]], 
-   Flatten[(7 (# - 1) + Range[6]) &amp; /@ Range[5]]];
-je = Join[ie[[Range[30]]] + 8, ie[[Range[30] + 30]] + 7];
-me = Join[ie[[Range[30]]] + 1, ie[[Range[30] + 30]] + 8];
-(*强加边界条件*)
-d = {Join[Table[0, 12], Table[100, 5]], 
-   Join[Range[7], 7*Range[5] + 1, 7*Range[5] + 7]};
-(*所求节点编号*)
-a = Flatten[(Range[5] + 7 # + 1) &amp; /@ Range[5]];
-(*单元分析*)
-K = Table[0, {i, 1, 42}, {j, 1, 42}];
-For[t = 1, t &lt;= Length[ie], t++,
-  b[ie[[t]]] = y[[je[[t]]]] - y[[me[[t]]]];
-  b[je[[t]]] = y[[me[[t]]]] - y[[ie[[t]]]];
-  b[me[[t]]] = y[[ie[[t]]]] - y[[je[[t]]]];
-  c[ie[[t]]] = x[[me[[t]]]] - x[[je[[t]]]];
-  c[je[[t]]] = x[[ie[[t]]]] - x[[me[[t]]]];
-  c[me[[t]]] = x[[je[[t]]]] - x[[ie[[t]]]];
-  sideta[t] = 2*(b[ie[[t]]]*c[je[[t]]] - b[je[[t]]]*c[ie[[t]]]);
-  ff = {ie[[t]], je[[t]], me[[t]]};
-  For[f1 = 1, f1 &lt;= 3, f1++,
-   p = ff[[f1]];
-   For[f2 = f1, f2 &lt;= 3, f2++,
-    q = ff[[f2]];
-    K[[p, q]] = K[[p, q]] + (b[p]*b[q] + c[p]*c[q])/sideta[t];
-    K[[q, p]] = K[[p, q]];
-    ];
-   ];
-  ];
-(*求解线性方程组*)
-R = Table[0, 42];
-R[[d[[2]]]] = d[[1]];
-Do[R[[i]] = -Plus @@ (K[[i, #]] &amp; /@ d[[2]]*d[[1]]), {i, a}]
-Do[Part[K, All, i] = 0, {i, d[[2]]}];
-Do[Part[K, i, All] = 0, {i, d[[2]]}];
-Do[K[[i, i]] = 1, {i, d[[2]]}];
-A = N[LinearSolve[K, R]];
-(*结果输出*)
-A = Join[A[[Range[7] + 7 # - 7]] &amp; /@ Range[6], 
-   A[[Range[7] + 42 - 7 #]] &amp; /@ (Range[5] + 1)];
-ListPlot3D[Transpose[A], ColorFunction -&gt; &quot;Rainbow&quot;]
-</code></pre>
-]]></content>
-    </entry>
-</feed>
+  </body>
+</html>
