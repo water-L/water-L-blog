@@ -1,98 +1,118 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>成都 上 | 兔子窝</title>
-<meta name="description" content="温故而知新">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://water-L.github.io/favicon.ico?v=1627880424117">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    成都 上 | 兔子窝
+</title>
+<link rel="shortcut icon" href="https://water-L.github.io/favicon.ico?v=1627881572166">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://water-L.github.io/styles/main.css">
-
-
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://water-L.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        
+</head>
 
-
-  </head>
-  <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://water-L.github.io">兔子窝</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
-        
-      </ul>
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://water-L.github.io">
+                <img class="avatar" src="https://water-L.github.io/images/avatar.png?v=1627881572166" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    兔子窝
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
-  </div>
-</nav>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>成都 上</h1>
-            <p class="article-meta">
-              2020-10-11
-              
-                <a href="https://water-L.github.io/tag/D2aTUPOHrE/" class="badge secondary">
-                  成都旅游
-                </a>
-              
-            </p>
-            
-            <div class="post-content">
-              <blockquote>
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            成都 上
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2020-10-11</time>
+                            
+                                <a href="https://water-L.github.io/tag/D2aTUPOHrE/" class="post-tag i-tag
+                            i-tag-primary">
+                            #成都旅游
+                        </a>
+                                
+                        </div>
+                        
+                                <div class="post-content">
+                                    <blockquote>
 <p>离去成都玩已经一个多月了，好几次想写点东西，毕竟还是第一次这样出去旅游，不过，那些天所思所想大概也没什么可公之于众的，于是便又一拖再拖。</p>
 </blockquote>
 <!-- more -->
@@ -102,204 +122,80 @@
 <p>第二天我们一早便启程前往熊猫基地。这大概是这次成都之行我最期待参观的地方了。早在一年前，我无意中在b站看到了熊猫的短视频，从此便入了熊猫坑再也没出来过，也一直心心念念能够有机会去四川、去成都看一下那里的大熊猫（别提北京动物园，那里的熊猫实在有点拉胯……）。这次去熊猫基地，那里的熊猫确实没让我失望，虽然没发现绩憨憨，也没能去到月亮产房，但看到蛋烘糕和热干面（或许可能使春生）已经让我非常满足了。在熊猫基地我们玩了一上午，下午我们回到市区去看了两个类似于北京798的艺术区。我一向对这些地方不太感冒，毕竟里面不少东西我都欣赏不来（可能反而艺术区里遗留的那些曾经属于工厂的一些痕迹更能让我心有感触），不过看在那里开开心心地拍照倒也感觉还不错。</p>
 <p>这次先写这么多吧，很晚了该睡了，以后要是想起来了再继续……</p>
 
-            </div>
-          </article>
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://water-L.github.io/post/electronsource/">
+                                <h3 class="post-title">
+                                    热发射电子源
+                                </h3>
+                            </a>
+                        </div>
+                        
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                                <!-- id-card -->
+                                
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://water-L.github.io/images/avatar.png?v=1627881572166)">
         </div>
-        <div class="paper" data-aos="fade-in">
-          
-            <div class="next-post">
-              <div class="next">
-                下一篇
-              </div>
-              <a href="https://water-L.github.io/post/electronsource/">
-                <h3 class="post-title">
-                  热发射电子源
-                </h3>
-              </a>
-            </div>
-          
-        </div>
-        
-      </div>
+        <h1 class="id_card-title">
+            兔子窝
+        </h1>
+        <h2 class="id_card-description">
+            温故而知新
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                    <!-- twitter -->
+                    
+                            <!-- weibo -->
+                            
+                                    <!-- facebook -->
+                                    
 
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://water-L.github.io/images/avatar.png?v=1627880424117" class="no-responsive avatar">
-    <div class="text-muted">温故而知新</div>
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+        </div>
     </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/shanghai2/">上海——实习</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/mcstas1/">在mcstas中实现容器</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/post/">招生</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/nothing/">老男孩</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/new-term/">New Term</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/birthday-gift/">Birthday Gift</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/electron-injection/">密度梯度注入</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/diary1/">日记</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/fem-c/">有限元作业——C语言</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/Finite-Element-Method/">有限元作业——Mathematica</a>
-            </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://water-L.github.io/tag/4WZT3UK6l/" class="badge secondary">
-          上海实习
-        </a>
-      
-        <a href="https://water-L.github.io/tag/he8vtjjs5P/" class="badge ">
-          Mcstas
-        </a>
-      
-        <a href="https://water-L.github.io/tag/jpWSVw9YHO/" class="badge warning">
-          trash
-        </a>
-      
-        <a href="https://water-L.github.io/tag/X07ufcOQri/" class="badge warning">
-          日志
-        </a>
-      
-        <a href="https://water-L.github.io/tag/NHAX_UMMma/" class="badge secondary">
-          笔记
-        </a>
-      
-        <a href="https://water-L.github.io/tag/lxIPlUXuEK/" class="badge secondary">
-          introspection
-        </a>
-      
-        <a href="https://water-L.github.io/tag/Psw0E9L4zl/" class="badge secondary">
-          C
-        </a>
-      
-        <a href="https://water-L.github.io/tag/rd9eqvevhG/" class="badge secondary">
-          mma
-        </a>
-      
-        <a href="https://water-L.github.io/tag/D2aTUPOHrE/" class="badge secondary">
-          成都旅游
-        </a>
-      
-        <a href="https://water-L.github.io/tag/b3yrBIeCBC/" class="badge ">
-          音乐
-        </a>
-      
-        <a href="https://water-L.github.io/tag/XLYz56tUN_/" class="badge warning">
-          2020春节
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://water-L.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
+    
+                                    
+
+                </div>
+
+
+
+
+            </div>
+
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://water-L.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
-
-    </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
-
-hljs.initHighlightingOnLoad()
-
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
 
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+    
+</body>
 
-
-  </body>
 </html>

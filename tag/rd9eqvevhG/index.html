@@ -1,324 +1,226 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>mma | 兔子窝</title>
-<meta name="description" content="温故而知新">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://water-L.github.io/favicon.ico?v=1627880424117">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    mma | 兔子窝
+</title>
+<link rel="shortcut icon" href="https://water-L.github.io/favicon.ico?v=1627881572166">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://water-L.github.io/styles/main.css">
-
-
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://water-L.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
 
-
-  </head>
-  <body>
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://water-L.github.io">兔子窝</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
-        
-      </ul>
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://water-L.github.io">
+                <img class="avatar" src="https://water-L.github.io/images/avatar.png?v=1627881572166" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    兔子窝
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
-  </div>
-</nav>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <h2 class="current-tag">标签: mma</h2>
-          
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://water-L.github.io/post/Finite-Element-Method/">有限元作业——Mathematica</a>
-    </h2>
-    <p class="article-meta">
-      2020-12-02
-      
-        <a href="https://water-L.github.io/tag/rd9eqvevhG/" class="badge success">
-          mma
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-container main-container">
+                <div id="content" class="main-container-left">
+                    
+    <div class="i-card">
+        <b>标签：#
+        mma</b>
+    </div>
+    
+        
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://water-L.github.io/post/Finite-Element-Method/">
+                        有限元作业——Mathematica
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2020-12-02</time>
+                    
+                        <a href="https://water-L.github.io/tag/rd9eqvevhG/" class="post-tag i-tag
+                            i-tag-success">
+            #mma
         </a>
-      
-    </p>
-    <p class="text-lead">
-      <p>题为计算长直接地金属槽内电场，为强迫边界条件。</p>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <p>题为计算长直接地金属槽内电场，为强迫边界条件。</p>
 <p>计算时采用了所谓的“划0置1”法。课程讲义中通过调整节点编号的方式来避免这种方法带来的矩阵处理上的复杂，但增加了节点划分的任务量。此处采用讲义中提到的直线内插法划分节点，而Mathematica强大的功能也使“划0置1”法的实现变得十分简单。</p>
 
-    </p>
-    <div class="row">
-      <a href="https://water-L.github.io/post/Finite-Element-Method/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://water-L.github.io/post/simulation1/">差分法作业——Mathematica</a>
-    </h2>
-    <p class="article-meta">
-      2020-10-24
-      
-        <a href="https://water-L.github.io/tag/rd9eqvevhG/" class="badge secondary">
-          mma
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://water-L.github.io/post/Finite-Element-Method/">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://water-L.github.io/post/simulation1/">
+                        差分法作业——Mathematica
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2020-10-24</time>
+                    
+                        <a href="https://water-L.github.io/tag/rd9eqvevhG/" class="post-tag i-tag
+                            i-tag-other_1">
+            #mma
         </a>
-      
-    </p>
-    <p class="text-lead">
-      <h2 id="题目">题目</h2>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <h2 id="题目">题目</h2>
 <p>T形电机电枢槽气隙磁位分布，忽略曲度效应。</p>
 <p>差分法，Mathematica 12.0 代码：</p>
 
-    </p>
-    <div class="row">
-      <a href="https://water-L.github.io/post/simulation1/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://water-L.github.io/post/simulation1/">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+                <!-- 翻页 -->
+                
+                </div>
+                <!--  -->
+                <div class="main-container-middle"></div>
+                <!--  -->
+                <div id="sidebar" class="main-container-right">
 
+                    <!-- 个人信息 -->
+                    
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://water-L.github.io/images/avatar.png?v=1627881572166)">
+        </div>
+        <h1 class="id_card-title">
+            兔子窝
+        </h1>
+        <h2 class="id_card-description">
+            温故而知新
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                    <!-- twitter -->
+                    
+                            <!-- weibo -->
+                            
+                                    <!-- facebook -->
+                                    
 
         </div>
-        <div class="row flex-edges">
-  
-  
+    </div>
+    
+
+                        <!-- 公告栏 -->
+                        
+
+                </div>
+            </div>
+
+
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://water-L.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
-      </div>
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://water-L.github.io/images/avatar.png?v=1627880424117" class="no-responsive avatar">
-    <div class="text-muted">温故而知新</div>
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/shanghai2/">上海——实习</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/mcstas1/">在mcstas中实现容器</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/post/">招生</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/nothing/">老男孩</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/new-term/">New Term</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/birthday-gift/">Birthday Gift</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/electron-injection/">密度梯度注入</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/diary1/">日记</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/fem-c/">有限元作业——C语言</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://water-L.github.io/post/Finite-Element-Method/">有限元作业——Mathematica</a>
-            </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://water-L.github.io/tag/4WZT3UK6l/" class="badge secondary">
-          上海实习
-        </a>
-      
-        <a href="https://water-L.github.io/tag/he8vtjjs5P/" class="badge secondary">
-          Mcstas
-        </a>
-      
-        <a href="https://water-L.github.io/tag/jpWSVw9YHO/" class="badge success">
-          trash
-        </a>
-      
-        <a href="https://water-L.github.io/tag/X07ufcOQri/" class="badge secondary">
-          日志
-        </a>
-      
-        <a href="https://water-L.github.io/tag/NHAX_UMMma/" class="badge secondary">
-          笔记
-        </a>
-      
-        <a href="https://water-L.github.io/tag/lxIPlUXuEK/" class="badge success">
-          introspection
-        </a>
-      
-        <a href="https://water-L.github.io/tag/Psw0E9L4zl/" class="badge secondary">
-          C
-        </a>
-      
-        <a href="https://water-L.github.io/tag/rd9eqvevhG/" class="badge secondary">
-          mma
-        </a>
-      
-        <a href="https://water-L.github.io/tag/D2aTUPOHrE/" class="badge success">
-          成都旅游
-        </a>
-      
-        <a href="https://water-L.github.io/tag/b3yrBIeCBC/" class="badge secondary">
-          音乐
-        </a>
-      
-        <a href="https://water-L.github.io/tag/XLYz56tUN_/" class="badge secondary">
-          2020春节
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://water-L.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-
-    </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
-
-hljs.initHighlightingOnLoad()
-
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+</body>
 
-
-
-  </body>
 </html>
