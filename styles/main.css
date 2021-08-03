@@ -2078,13 +2078,13 @@ p > code {
       font-family: 'KaTeX_Main';
     }
     body {
-      color: #555;
+      color: #495057;
     }
     .next-md-body {
-      color: #555;
+      color: #495057;
     }
     .next-md-body h1, .next-md-body h2 {
-      border-bottom-color: #555;
+      border-bottom-color: #495057;
     }
     .archive-timeline-box::after, .tag-timeline-wrapper::after {
       background: #eeeeeefe;
@@ -2177,21 +2177,19 @@ p > code {
       background-color: #fffffffe;
     }
     .site-meta {
-      background: #000 !important;
+      background: #3b5bdb !important;
     }
     .head-top-line {
-      background: #000;
+      background: #3b5bdb;
     }
     .brand {
-      background: #000000fe;
+      background: #364fc7fe;
     }
     .main-title, .brand {
       color: #FFF !important;
     }
     .mist .site-title i {
       background: #FFFFFFfe;
-    }.box-shadow-wrapper {
-      box-shadow: none !important;
     }body {
       cursor: default;
     }a {
