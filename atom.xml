@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://water-L.github.io</id>
     <title>兔子窝</title>
-    <updated>2021-08-03T00:12:51.506Z</updated>
+    <updated>2021-08-03T05:40:47.576Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://water-L.github.io"/>
     <link rel="self" href="https://water-L.github.io/atom.xml"/>
@@ -81,6 +81,7 @@
 ]]></summary>
         <content type="html"><![CDATA[<p>实习内容相关——</p>
 <!-- more -->
+<p>github库：<a href="https://github.com/water-L/epicsoscilloscope">Epics Oscilloscope</a></p>
 <p>7月1日到达光源与阎映炳老师见面后，我们一起讨论了今后实习的课题内容。阎老师列举了包括EPICS控制、数据库、示波器仿真、远程控制界面的多个课题供我选择。当时已是星期四，故与老师约定在先初步了解一下各个方向，然后到下一周周一（7月5日）再确定具体课题内容。最终我们定下来实习的课题是制作一个基于EPICS 的波形数据产生和采集系统。</p>
 <figure data-type="image" tabindex="1"><img src="https://water-L.github.io/post-images/1627918411615.jpg" alt="" loading="lazy"></figure>
 <h2 id="控制系统简介">控制系统简介</h2>
