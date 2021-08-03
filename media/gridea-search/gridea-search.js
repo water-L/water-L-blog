@@ -4,7 +4,7 @@ function getParam(url, param) {
         var urlSearch = url.split('?');
         var paramList = urlSearch[1].split('&');
         for (var i = paramList.length - 1; i >= 0; i--) {
-            var tep = paramList[i].split("=");
+            var tep = paramList[i].split('=');
             if (tep[0] == param) {
                 return tep[1];
             }
@@ -15,7 +15,7 @@ function getParam(url, param) {
 //原生js Ajax 异步GET请求
 function ajax(obj) {
     var xhr = new XMLHttpRequest();
-    xhr.open("get", obj.url, true);
+    xhr.open('get', obj.url, true);
     xhr.send(null);
     xhr.onreadystatechange = function () {
         //异步请求：响应状态为4，数据加载完毕
@@ -31,32 +31,50 @@ function ajax(obj) {
     }
 }
 
-//模糊搜索
+//模糊搜索 https://github.com/krisk/fuse
 function fuzzySearch(data, phrase) {
-    var options = {
-        shouldSort: true,
-        includeMatches: true,
-        threshold: 0.5,
-        location: 0,
-        distance: 1000,
-        maxPatternLength: 32,
-        minMatchCharLength: 1,
-        keys: [
-            "title",
-            "content"
-        ]
-    };
-    var fuse = new Fuse(data, options);
-    var fuzzyResult = fuse.search(phrase);
-    return fuzzyResult;
+	var phrase_len = phrase.length;
+	var min_len = 4;
+	var max_len = 32;
+	//根据搜索的词数决定匹配大小，最小匹配词数不能大于词数，最大匹配词数不能小于词数
+	if(phrase_len<4){
+		min_len = phrase_len;
+	}
+	if(phrase_len<=0){
+		min_len = 99999999;
+		max_len = 99999999;
+	}
+	if(phrase_len>32){
+		max_len = phrase_len;
+	}
+
+	var options = {
+		shouldSort: true,
+		includeMatches: true,
+		threshold: 0.5,// 匹配算法阈值。阈值为0.0需要完全匹配（字母和位置），阈值为1.0将匹配任何内容。
+		location: 0,// 确定文本中预期找到的模式的大致位置。
+		distance: 1000,
+		maxPatternLength: max_len, // 模式的最大长度
+		minMatchCharLength: min_len, // 模式的最小字符长度
+		// 搜索标题与内容
+		keys: [
+			'title',
+			'content',
+			'tags.name'
+		]
+	};
+	var fuse = new Fuse(data, options);
+	var fuzzyResult = fuse.search(phrase);
+	return fuzzyResult;
 }
+
 //检查缓存是否最新
 function checkCache() {
     var infosCache = JSON.parse(localStorage.getItem('InfosCache'));
     var contentsCache = JSON.parse(localStorage.getItem('ContentsCache'));
     if (infosCache && contentsCache) {
         var cachedTime = infosCache.utils.now.toString();
-        var updateTime = document.getElementById("gridea-search-form").getAttribute("data-update");
+        var updateTime = document.getElementById('gridea-search-form').getAttribute('data-update');
         if (cachedTime === updateTime) {
             return true;
         }
@@ -113,16 +131,16 @@ function searchBy(phrase, callback) {
 
 //显示无搜索结果
 function showNoResult() {
-    var resultDIV = document.getElementById("gridea-search-result");
-    var noResult = resultDIV.getElementsByClassName("no-result")[0];
-    noResult.style.display = "block";
+    var resultDIV = document.getElementById('gridea-search-result');
+    var noResult = resultDIV.getElementsByClassName('no-result')[0];
+    noResult.style.display = 'block';
     resultDIV.innerHTML = noResult.outerHTML;
 }
 
-//执行搜索
+//根据URL参数执行搜索
 function searchByParam(resultHandler) {
     var phrase = getParam(window.location.href, 'q');
-    if (phrase === '' || typeof (phrase) === "undefined") {
+    if (phrase === '' || typeof (phrase) === 'undefined') {
         showNoResult();
     } else {
         searchBy(decodeURI(phrase), resultHandler);
@@ -131,7 +149,7 @@ function searchByParam(resultHandler) {
 
 //获取搜索结果列表模板的URL
 function getTemplateURL() {
-    var scripts = document.getElementsByTagName("script");
+    var scripts = document.getElementsByTagName('script');
     var templateURL = '';
     for (var i = 0; i < scripts.length; i++) {
         if (scripts[i].type === 'text/ejs') {
@@ -147,7 +165,7 @@ function renderResult(searchedInfos) {
         ajax({
             url: getTemplateURL(),
             success: function (data) {
-                var resultDIV = document.getElementById("gridea-search-result");
+                var resultDIV = document.getElementById('gridea-search-result');
                 resultDIV.innerHTML = ejs.compile(data)(searchedInfos);
             }
         });
@@ -197,7 +215,7 @@ function grideaSearch() {
     var resultHandler = function (searchedContents) {
         getInfos(function (infos) {
             //console.log(infos);
-            console.log(searchedContents);
+            //console.log(searchedContents);
             var searchedInfos = getResult(infos, searchedContents);
             renderResult(searchedInfos);
         });
