@@ -2177,13 +2177,13 @@ p > code {
       background-color: #fffffffe;
     }
     .site-meta {
-      background: #3b5bdb !important;
+      background: #212529 !important;
     }
     .head-top-line {
-      background: #3b5bdb;
+      background: #212529;
     }
     .brand {
-      background: #364fc7fe;
+      background: #212529fe;
     }
     .main-title, .brand {
       color: #FFF !important;
