@@ -9,7 +9,7 @@
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#000">
 <title>有限元作业——Mathematica | 兔子窝</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1627971668633">
+<link rel="shortcut icon" href="/favicon.ico?v=1627971916585">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1192,7 +1192,7 @@ S. Bulanov, N. Naumova, F. Pegoraro, J. Sakai Particle injection into the wave a
 &lt;p&gt;对比mma和C，果然还是站在别人的基础上方便（ノへ￣、）&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;p&gt;言归正传，这是一个很简单的FEM的题目，唯一难的地方是要用C语言写。&lt;/p&gt;
-&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;p&gt;程序主体如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;#include &amp;lt;math.h&amp;gt;
 
 #include &amp;lt;stdio.h&amp;gt;
@@ -1251,8 +1251,9 @@ int main()
     return 0;
 
 }
-
-void LS(float K[12][12], float d[6])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;高斯消元法：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;void LS(float K[12][12], float d[6])
 {
     int i, j;
     float temp;
